@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: removing the old httpd webserver software
+      yum: name=httpd state=absent
+    - name: installing httpd package server
+      yum: name=httpd state=installed
+    - name: copying the index file from ansible server to node/remote servers
+      copy: src=/root/Desktop/index.html dest=/var/www/html/index.html
+    - name: starting the Apache webserver service
+      service: name=httpd state=started
