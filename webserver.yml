@@ -7,5 +7,3 @@
       yum: name=httpd state=installed
     - name: copying the index file from ansible server to node/remote servers
       copy: src=/root/Desktop/index.html dest=/var/www/html/index.html
-    - name: starting the Apache webserver service
-      service: name=httpd state=started
